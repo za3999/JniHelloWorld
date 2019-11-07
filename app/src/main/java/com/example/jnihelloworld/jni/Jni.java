@@ -1,4 +1,4 @@
-package com.example.jnihelloworld;
+package com.example.jnihelloworld.jni;
 
 public class Jni {
 
@@ -7,4 +7,6 @@ public class Jni {
     }
 
     public native int getInt();
+
+    public native int add(int a, int b);
 }
