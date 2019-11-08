@@ -1,5 +1,7 @@
 package com.example.jnihelloworld.jni;
 
+import com.example.jnihelloworld.bean.User;
+
 public class Jni {
 
     static {
@@ -9,4 +11,6 @@ public class Jni {
     public native int getInt();
 
     public native int add(int a, int b);
+
+    public native String getUserName(User user);
 }
