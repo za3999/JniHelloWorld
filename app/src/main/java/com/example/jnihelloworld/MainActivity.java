@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void test1(View view) {
         User user = new User("郑小才", "10010");
-        Toast.makeText(this, "int :" + new Jni().getUserName(user), Toast.LENGTH_LONG).show();
+        Jni jni = new Jni();
+        Toast.makeText(this, jni.getInt() + "|" + jni.add(4, 5) + "|" + jni.getUserName(user), Toast.LENGTH_LONG).show();
     }
 }
