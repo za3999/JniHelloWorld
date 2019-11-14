@@ -3,7 +3,7 @@
 //
 
 #include <jni.h>
-#include "util.cpp"
+#include "util.h"
 
 static const char *className = "com/example/jnihelloworld/jni/Jni";
 
