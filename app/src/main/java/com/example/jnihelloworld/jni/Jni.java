@@ -10,6 +10,8 @@ public class Jni {
 
     public native int getInt();
 
+    public native String getJniUser();
+
     public native int add(int a, int b);
 
     public native String getUserName(User user);

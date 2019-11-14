@@ -4,11 +4,17 @@
 
 #include <jni.h>
 #include "util.h"
+#include "User.cpp"
 
 static const char *className = "com/example/jnihelloworld/jni/Jni";
 
 static int getInt(JNIEnv *env, jobject jobj) {
     return 3;
+}
+
+static jstring getJniUser(JNIEnv *env, jobject jobj) {
+    User user(env->NewStringUTF("小张 "), 1000);
+    return user.getName();
 }
 
 static int add(JNIEnv *env, jobject jobj, jint a, jint b) {
@@ -23,6 +29,7 @@ static jstring getUserName(JNIEnv *env, jobject jobj, jobject user) {
 
 static JNINativeMethod jni_Methods_table[] = {
         {"getInt",      "()I",                                                       (void *) getInt},
+        {"getJniUser",  "()Ljava/lang/String;",                                      (void *) getJniUser},
         {"add",         "(II)I",                                                     (void *) add},
         {"getUserName", "(Lcom/example/jnihelloworld/bean/User;)Ljava/lang/String;", (void *) getUserName},
 };
